@@ -37,46 +37,17 @@ function onImgClick(evt) {
         `<img src="${imgSrc}" width="800" height="600">`);
     instance.show();
 
-    const visible = instance.visible();
-    if (visible) {
-        document.addEventListener("keydown", (e) => {
-          if (e.key !== "Escape") {
-            return;
-          } else {
-            if (visible) {
-                instance.close();
-                document.remove
-            }
-              console.log(e);
-          }
-        });
-    } 
-
-    // onClose(onImgClick.bind(evt));
+    document.addEventListener("keydown", handleKeyDown);
     
+    function handleKeyDown(e) {
+    if (e.key === "Escape") {
+      instance.close();
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+  }
+  
+
 }
    
-
-// document.addEventListener("keydown", onClose);
-
-
-
-// function onClose(e) {
-//      const visible = instance.visible();
-//      if (visible) {
-//        document.addEventListener("keydown", (e) => {
-//          if (e.key !== "Escape") {
-//            return;
-//          } else {
-//            if (visible) {
-//                instance.close();
-//                document.removeEventListener("keydown", onClose)
-//            }
-//              console.log(e);
-//          }
-//        });
-//      } 
-
-// }
 
 
