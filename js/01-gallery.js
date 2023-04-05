@@ -22,6 +22,7 @@ list.insertAdjacentHTML("beforeend", createGallery(galleryItems));
 
 list.addEventListener("click", onImgClick)
 
+
 function onImgClick(evt) {
     evt.preventDefault();
 
@@ -37,17 +38,45 @@ function onImgClick(evt) {
     instance.show();
 
     const visible = instance.visible();
-    
-    document.addEventListener("keydown", (e) => {
-        if (e.key !== "Escape") {
+    if (visible) {
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") {
             return;
-        } else {
+          } else {
             if (visible) {
                 instance.close();
+                document.remove
             }
-        }
-    })
+              console.log(e);
+          }
+        });
+    } 
+
+    // onClose(onImgClick.bind(evt));
+    
 }
    
+
+// document.addEventListener("keydown", onClose);
+
+
+
+// function onClose(e) {
+//      const visible = instance.visible();
+//      if (visible) {
+//        document.addEventListener("keydown", (e) => {
+//          if (e.key !== "Escape") {
+//            return;
+//          } else {
+//            if (visible) {
+//                instance.close();
+//                document.removeEventListener("keydown", onClose)
+//            }
+//              console.log(e);
+//          }
+//        });
+//      } 
+
+// }
 
 
