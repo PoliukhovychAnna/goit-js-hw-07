@@ -20,39 +20,7 @@ function createGallery(arr) {
 
 list.insertAdjacentHTML("beforeend", createGallery(galleryItems));
 
-
-/////////////////////////OLD FUNCTION////////////////////
-
-// list.addEventListener("click", onImgClick)
-
-
-// function onImgClick(evt) {
-//     evt.preventDefault();
-
-//     const img = evt.target
-//     if (!img.classList.contains("gallery__image")) {
-//         return
-//     }
-
-//     const imgSrc = img.dataset.source;
-
-//     const instance = basicLightbox.create(
-//         `<img src="${imgSrc}" width="800" height="600">`);
-//     instance.show();
-
-//     document.addEventListener("keydown", handleKeyDown);
-    
-//     function handleKeyDown(e) {
-//     if (e.key === "Escape") {
-//       instance.close();
-//       document.removeEventListener("keydown", handleKeyDown);
-//     }
-//   }
-// }
-   
-
-
-/////////////NEW FUNCTION ////////////////
+//NEW FUNCTION 
 
 list.addEventListener("click", onImgClick)
 
@@ -83,6 +51,44 @@ function onImgClick(evt) {
     }
   instance.show();
 }
+
+
+
+/////////////////////////OLD FUNCTION////////////////////
+///ПІСЛЯ ЗДАЧІ ВИДАЛЮ ТА ОНОВЛЮ РЕПОЗИТОРІЙ
+
+
+
+// list.addEventListener("click", onImgClick)
+
+
+// function onImgClick(evt) {
+//     evt.preventDefault();
+
+//     const img = evt.target
+//     if (!img.classList.contains("gallery__image")) {
+//         return
+//     }
+
+//     const imgSrc = img.dataset.source;
+
+//     const instance = basicLightbox.create(
+//         `<img src="${imgSrc}" width="800" height="600">`);
+//     instance.show();
+
+//     document.addEventListener("keydown", handleKeyDown);
+    
+//     function handleKeyDown(e) {
+//     if (e.key === "Escape") {
+//       instance.close();
+//       document.removeEventListener("keydown", handleKeyDown);
+//     }
+//   }
+// }
+   
+
+
+
 
 
 
