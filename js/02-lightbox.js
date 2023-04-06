@@ -18,16 +18,10 @@ function createGallery(arr) {
 
 list.insertAdjacentHTML("beforeend", createGallery(galleryItems));
 
-list.addEventListener("click", onImgClick);
-
-
-function onImgClick(evt) {
-    evt.preventDefault();
-    
     const lightbox = new SimpleLightbox(".gallery a", {
-        captionSelector:'img',
-        captionsData: "alt",
-        captions: true,
+      captionSelector: "img",
+      captionsData: "alt",
+      captions: true,
       captionDelay: 250,
+      preloading: false,
     });
-}
